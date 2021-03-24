@@ -1,0 +1,41 @@
+ 
+    <ion-card-content>
+  <ion-list >
+         <ion-item >
+         <ion-label (click)="alertTipo(index)" slot = "start"> Tipo modo</ion-label>
+         <ion-label > {{tipo===0? "variable" : "fijo"}} </ion-label>
+        </ion-item>
+
+        <ion-item>
+         <ion-label (click)="editaIntensidad($event,index)" slot = "start">Intensidad</ion-label>
+         <ion-label  >{{intensidadMin}}----{{intensidadMax}}</ion-label> 
+        </ion-item>
+         
+        <ion-item  [class.oculta]="localServicio.confi[index].editaIntensidad">
+          <ion-range dualKnobs="true"  
+             (ionChange)="cambioIntensidad($event,index)"  
+            min="10" max="255"
+            step="1" snaps="true" pin="true"  [value]="{ lower: intensidadMin, upper: intensidadMax }">
+            <ion-label slot="start">10</ion-label>
+            <ion-label slot="end">255</ion-label>
+          </ion-range>
+        </ion-item>
+
+        <ion-item>
+         <ion-label (click)="editaRetardo($event,index)" slot = "start">Retardo led</ion-label>
+         <ion-label slot ="end">{{delayLed}}</ion-label> 
+       </ion-item>
+
+       <ion-item  [class.oculta]="localServicio.confi[index].editaRetardo">
+          <ion-range   
+            (ionChange)="cambioRetardo($event,index)"  
+            min="2" max="100"
+            step="1" snaps="true" pin="true"  [value]="delayLed">
+            <ion-label slot="start">2</ion-label>
+            <ion-label slot="end">100</ion-label>
+          </ion-range>
+         </ion-item>
+
+      </ion-list>
+ 
+     </ion-card-content>

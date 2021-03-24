@@ -1,0 +1,27 @@
+
+ion-content {
+    --background: url('./seleneDisco.svg') no-repeat center/cover fixed;
+  //  background-color: blue;
+  }
+
+   ion-toolbar,ion-list,  ion-item{
+   // --background: url('./seleneCara.svg') no-repeat center/cover fixed!important;
+    // border-color: rgba(0, 0, 0, 0)!important;
+	background-color: rgba(0, 0, 0, 0)!important;
+    // color: white !important; 
+   
+  }
+
+  ion-icon{
+    margin-right: 15px;
+    font-size: 30px;
+
+}
+.s{
+  font-size: 14px!important;
+}
+ 
+
+.configuracion {
+  display: none;
+}

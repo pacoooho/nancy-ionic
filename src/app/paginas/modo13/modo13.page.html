@@ -1,0 +1,31 @@
+   <app-cabecera-tabs [color]="color" [titulo]="localServicio.modoLocal.modo " [estadoBlue]="blueServicio.conectado" (blueConecta)="blueConecta()">
+  </app-cabecera-tabs>
+  <ion-content [fullscreen]="true">
+      <ion-list *ngFor="let item of modosLedDatosLocal; let i = index">
+   
+      <ion-card >
+        <app-cabecera-modos [index]="i" (edita)="edita(i)"></app-cabecera-modos>
+         <app-configuracion-modos 
+         [modosLedDatosLocal]=  modosLedDatosLocal
+         
+         
+          [modoMotorDatosLocal]=modoMotorDatosLocal
+          [modoLocal]=modoLocal
+  
+  
+        [index]="i" 
+        [class.configuracion]="this.localServicio.confi[i].editaConfi" 
+        [editaConfi]="this.localServicio.confi[i].editaConfi"
+        [tipo]="item.tipo"
+        (tipoCambio)="cambio()" 
+        [intensidadMax]="item.intensidadMax"
+        [intensidadMin]="item.intensidadMin"
+        [delayLed]="item.delayLed"
+        >
+        </app-configuracion-modos>
+      </ion-card>
+  
+  
+    </ion-list>
+  </ion-content>  
+ 
