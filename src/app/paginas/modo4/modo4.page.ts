@@ -35,7 +35,7 @@ export class Modo4Page implements OnInit {
   constructor(
     private bluetoothSerial: BluetoothSerial,
     public toastController: ToastController,
-    private localServicio: DataLocalService,
+    public localServicio: DataLocalService,
     public blueServicio: BluetoohService,
     private alertControlador: AlertController,
 
@@ -139,7 +139,7 @@ ionViewWillEnter(){
     this.localServicio.guardaConfiLocal();
     // this.edita.emit()
   }
-  editaIntensidad(event:any, index:number){
+  editaIntensidad( index:number){
     this.localServicio.confi[3].editaIntensidad=!this.localServicio.confi[3].editaIntensidad;
     this.localServicio.guardaConfiLocal();
   }
